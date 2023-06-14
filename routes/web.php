@@ -23,4 +23,9 @@ Route::get('/about-us', 'HomeController@about');
 
 Route::get('/projects', 'ProjectController@index');
 
+Route::get('/students', 'StudentController@index');
+Route::get('/students/insert', 'StudentController@insert');
+Route::get('/students/update', 'StudentController@update');
+Route::get('/students/delete', 'StudentController@delete');
+
 

@@ -28,4 +28,6 @@ Route::get('/students/insert', 'StudentController@insert');
 Route::get('/students/update', 'StudentController@update');
 Route::get('/students/delete', 'StudentController@delete');
 
+Route::get('/students/show/{id}', 'StudentController@show')->name('students.show');
+
 

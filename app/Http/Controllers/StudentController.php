@@ -11,15 +11,9 @@ class StudentController extends Controller
 
 	public function index(){
 
-		$students = Student::all();
-
-		echo "<ul>";
-		foreach($students as $student){
-			echo "<li>{$student->name}</li>";
-			echo "<li>{$student->email}</li>";
-		}
-
-		echo "</ul>";
+		$all_students = Student::all();
+		
+		return view('students.index', compact('all_students'));
 
 	}
 
@@ -53,5 +47,12 @@ class StudentController extends Controller
 
 		Student::where('id', 2)->delete();
 
+	}
+
+	public function show($id){
+
+		$student = Student::findOrFail($id);
+
+		return $student;
 	}
 }
